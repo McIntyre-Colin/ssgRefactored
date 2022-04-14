@@ -7,25 +7,26 @@ def main(pages):
     for page in pages:
         content_file = page['filename']
         output_file = page['output']
-        open(output_file, 'w+').write(header,content_file, footer)
+        combined_file = header + content_file + footer
+        open(output_file, 'w+').write(combined_file)
 
 
 
 pages = [
     {
-    "filename": "content/index.html",
-    "output": "docs/index.html",
+    "filename": "./content/index.html",
+    "output": "./docs/index.html",
     "title": "About",
     },
     {
-    "filename": "content/projects.html",
-    "output": "docs/projects.html",
+    "filename": "./content/projects.html",
+    "output": "./docs/projects.html",
     "title": "My Projects",
     },
 
     {
-    "filename": "content/resume.html",
-    "output": "docs/resume.html",
+    "filename": "./content/resume.html",
+    "output": "./docs/resume.html",
     "title": "My Resume",
 
     }
