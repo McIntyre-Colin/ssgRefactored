@@ -5,8 +5,9 @@ def main(pages):
 
     #for loop to generate each content page from filepaths specified outside of function
     for page in pages:
-        content_file = page['filename']
+        content_file = open(page['filename']).read()
         output_file = page['output']
+        
         combined_file = header + content_file + footer
         open(output_file, 'w+').write(combined_file)
 
