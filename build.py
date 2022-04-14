@@ -3,16 +3,11 @@ def main(pages):
     header = open('./templates/header.html').read()
     footer = open('./templates/footer.html').read()
 
+    #for loop to generate each content page from filepaths specified outside of function
     for page in pages:
         content_file = page['filename']
         output_file = page['output']
         open(output_file, 'w+').write(header,content_file, footer)
-
-    #Crwating webpages
-    open('./docs/index.html', 'w+').write(index)
-    open('./docs/projects.html', 'w+').write(projects)
-    open('./docs/resume.html', 'w+').write(resume)
-
 
 
 
@@ -37,4 +32,4 @@ pages = [
 
 ]
     
-main()
+main(pages)
