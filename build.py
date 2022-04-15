@@ -4,10 +4,12 @@ def main(pages):
     #for loop to generate each content page from filepaths specified outside of function
     for page in pages:
         content_file = open(page['filename']).read()
+        title = page['title']
         output_file = page['output']
         template.replace("{{content}}", content_file)
 
         combined_file = template.replace("{{content}}", content_file)
+        combined_file = template.replace("{{title}}", title)
         open(output_file, 'w+').write(combined_file)
 
 
