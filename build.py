@@ -9,7 +9,7 @@ def main(pages):
         template.replace("{{content}}", content_file)
 
         combined_file = template.replace("{{content}}", content_file)
-        combined_file = template.replace("{{title}}", title)
+        combined_file = combined_file.replace("{{title}}", title)
         open(output_file, 'w+').write(combined_file)
 
 
